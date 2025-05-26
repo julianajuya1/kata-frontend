@@ -1,30 +1,32 @@
 import React from "react";
-import './TransactionTable.module.css';
+import "./TransactionTable.scss";
 
 const TransactionTable = ({ data }) => {
   return (
-    <div style={{ overflowX: "auto" }}>
-      <h2 style={{ textAlign: "center", margin: "1rem 0" }}>
-        Lista de Transacciones
-      </h2>
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Fecha</th>
-            <th>Cliente</th>
-            <th>Monto</th>
-            <th>Medio de Pago</th>
+    <div className="container">
+      <h2 className="container__title">Lista de Transacciones</h2>
+      <table className="container__table">
+        <thead className="container__table-head">
+          <tr className="container__table-row">
+            <th className="container__table--header-cell">ID</th>
+            <th className="container__table--header-cell">Fecha</th>
+            <th className="container__table--header-cell">Cliente</th>
+            <th className="container__table--header-cell">Monto</th>
+            <th className="container__table--header-cell">Medio de Pago</th>
           </tr>
         </thead>
         <tbody>
           {data.map((txn) => (
-            <tr key={txn.id}>
-              <td>{txn.id}</td>
-              <td>{new Date(txn.transaction_date).toLocaleDateString()}</td>
-              <td>{txn.customer_name}</td>
-              <td>${parseFloat(txn.amount).toLocaleString()}</td>
-              <td>{txn.means_payment}</td>
+            <tr key={txn.id} className="container__table--row">
+              <td className="container__table--cell">{txn.id}</td>
+              <td className="container__table--cell">
+                {new Date(txn.transaction_date).toLocaleDateString()}
+              </td>
+              <td className="container__table--cell">{txn.customer_name}</td>
+              <td className="container__table--cell">
+                ${parseFloat(txn.amount).toLocaleString()}
+              </td>
+              <td className="container__table--cell">{txn.means_payment}</td>
             </tr>
           ))}
         </tbody>

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import styles from './TopWinner.module.css';
+import './TopWinner.scss';
 import Confetti from 'react-confetti';
 
 const TopWinner = ({ nombre, total }) => {
@@ -14,16 +14,16 @@ const TopWinner = ({ nombre, total }) => {
   }, []);
 
   return (
-    <div className={styles.card} ref={cardRef}>
+    <div className="card" ref={cardRef}>
       <Confetti
         width={dimensions.width}
         height={dimensions.height}
         run={true}
       />
-      <h2 className={styles.title}>🏆 Cliente con Mayor Dispersión</h2>
-      <p className={styles.nombre}>{nombre}</p>
-      <p className={styles.total}>${total.toLocaleString()}</p>
-      <p className={styles.subtext}>¡Felicidades! 🎉</p>
+      <h2 className="card__title">🏆 Cliente con Mayor Dispersión</h2>
+      <p className="card__name">{nombre}</p>
+      <p className="card__total">${total.toLocaleString()}</p>
+      <p className="card__subtext">¡Felicidades! 🎉</p>
     </div>
   );
 };
