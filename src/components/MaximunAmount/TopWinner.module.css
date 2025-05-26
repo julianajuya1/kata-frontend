@@ -1,0 +1,33 @@
+.card {
+  position: relative;
+  background: white;
+  border-left: 5px solid #10b981;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.nombre {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.total {
+  font-size: 2.25rem;
+  color: #059669;
+  font-weight: bold;
+}
+
+.subtext {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
